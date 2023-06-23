@@ -1,6 +1,6 @@
 <p align="center"><h1>🧠 ChatGPT Interview Preparation</h1></p>
 
-# Interview Questions: React
+## Interview Questions: React
 
 Here are some possible questions that you might encounter during your interview:
 
