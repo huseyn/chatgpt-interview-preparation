@@ -394,7 +394,7 @@ function ChildComponent(props) {
 }
 ```
 
-In this case, the **ChildComponent** receives the **greeting** prop from the parent component as a property of the **props** object. It then renders a **<p>** element displaying the value of the **greeting** prop.
+In this case, the **ChildComponent** receives the **greeting** prop from the parent component as a property of the **props** object. It then renders a **`<p>`** element displaying the value of the **greeting** prop.
 
 3. **Prop Values**: Props can be of any JavaScript data type, including strings, numbers, booleans, objects, or even functions. The values of props can be dynamic and can come from variables, constants, or even state in the parent component.
 
