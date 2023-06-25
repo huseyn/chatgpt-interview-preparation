@@ -366,3 +366,52 @@ Here's why keys are important and when they should be used:
 It's important to note that keys should be specified on the components or elements within a list, rather than on the container or parent component. Each key should be unique within the scope of the component rendering the list.
 
 In summary, keys are used in React to uniquely identify and track elements in a collection, such as in lists. They aid in efficient updates, help prevent duplicate key warnings, and assist React in accurately rendering, reordering, and removing elements. Proper usage of keys is important to ensure smooth performance and avoid unexpected rendering issues in React applications.
+
+---
+
+## 11. Describe the concept of props in React and how they are passed between components.
+
+In React, props (short for properties) are a mechanism for passing data from a parent component to its child components. They allow data to flow in a unidirectional manner, from top to bottom in the component hierarchy. Props are used to configure and customize child components, providing them with the necessary data and behavior.
+
+Here's an overview of the concept of props in React and how they are passed between components:
+
+1. **Prop Usage**: Props are defined as attributes on custom React components when they are used. They are similar to HTML attributes and are specified using a syntax similar to HTML tags. For example, consider a parent component rendering a child component and passing it a prop:
+
+```jsx
+function ParentComponent() {
+  const message = "Hello, child component!";
+  return <ChildComponent greeting={message} />;
+}
+```
+
+In this example, the **ParentComponent** renders a **ChildComponent** and passes a prop named **greeting** with the value **"Hello, child component!"**.
+
+2. **Prop Access**: Child components can access the props passed to them by accessing the **props** object. The props object contains all the properties passed from the parent component. Child components can then utilize the props to render dynamic content or influence their behavior. For example:
+
+```jsx
+function ChildComponent(props) {
+  return <p>{props.greeting}</p>;
+}
+```
+
+In this case, the **ChildComponent** receives the **greeting** prop from the parent component as a property of the **props** object. It then renders a **<p>** element displaying the value of the **greeting** prop.
+
+3. **Prop Values**: Props can be of any JavaScript data type, including strings, numbers, booleans, objects, or even functions. The values of props can be dynamic and can come from variables, constants, or even state in the parent component.
+
+4. **Passing Multiple Props**: Multiple props can be passed to a child component by simply including them as separate attributes when rendering the child component. For example:
+
+```jsx
+function ParentComponent() {
+  const name = "John";
+  const age = 25;
+  return <ChildComponent name={name} age={age} />;
+}
+```
+
+The **ParentComponent** passes two props, **name** and **age**, to the **ChildComponent**.
+
+5. **Prop Validation**: React allows you to define the expected types and requirements for props using prop types. Prop types help in validating the props passed to a component, ensuring that they meet the specified criteria.
+
+6. **Default Props**: React also supports the use of default props. Default props are values that will be used for a prop if no value is explicitly provided by the parent component.
+
+The passing of props between components allows for component composition and reusability. Parent components can configure child components by passing different props, enabling flexible and dynamic rendering based on changing data or conditions. By following the unidirectional data flow principle, React ensures predictable and maintainable application behavior.
