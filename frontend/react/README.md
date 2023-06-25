@@ -344,3 +344,25 @@ The **<Link>** component renders an anchor tag (<a>) with the specified to attri
 5. **Additional Features**: React Router provides additional features like nested routes, URL parameters, route matching, and redirection. These features allow you to create more complex routing configurations and handle dynamic data in your application.
 
 By using React Router or similar routing libraries, developers can create single-page applications (SPAs) that have multiple routes and navigate between them without triggering a full page reload. React Router abstracts away the complexities of handling routing and navigation in a React application, making it easier to create intuitive and responsive user interfaces.
+
+---
+
+## 10. What is the purpose of keys in React and when should they be used?
+
+In React, the **key** prop is a special attribute used to identify and differentiate elements in a collection rendered by a component, such as in a list or a set of dynamically generated components. The purpose of keys is to help React efficiently update and re-render the components when their order, addition, or removal changes.
+
+Here's why keys are important and when they should be used:
+
+1. **Element Identity**: Keys provide a unique identifier for each element in a collection. React uses these keys to track the identity of each element when it performs updates. It allows React to recognize which elements have changed, moved, or been added or removed.
+
+2. **Efficient Updates**: When React updates a list of elements, it performs a process called reconciliation. By comparing the keys of old and new elements, React can determine which elements have changed and optimize the rendering process. Without keys, React may have to re-render all elements in the list, potentially leading to performance issues.
+
+3. **Stable Identity**: Keys should be stable and consistent across renders. Ideally, keys should not change unless the identity of the corresponding element changes. Changing keys can result in unintended consequences, such as losing component state or triggering unnecessary re-renders.
+
+4. **Avoiding Duplicate Key Warnings**: React uses keys to ensure that each element in a list has a unique identity. Using unique keys helps avoid warnings or errors that may occur when multiple elements have the same key.
+
+5. **Adding and Removing Elements**: Keys play a crucial role when adding or removing elements from a collection. When a new element is added, React uses the key to determine where it should be inserted in the DOM. Similarly, when an element is removed, React uses the key to identify the element and remove it from the DOM.
+
+It's important to note that keys should be specified on the components or elements within a list, rather than on the container or parent component. Each key should be unique within the scope of the component rendering the list.
+
+In summary, keys are used in React to uniquely identify and track elements in a collection, such as in lists. They aid in efficient updates, help prevent duplicate key warnings, and assist React in accurately rendering, reordering, and removing elements. Proper usage of keys is important to ensure smooth performance and avoid unexpected rendering issues in React applications.
